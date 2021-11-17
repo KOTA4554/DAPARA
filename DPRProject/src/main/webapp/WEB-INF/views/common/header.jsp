@@ -1,46 +1,48 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<head>
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/font-awesome.min.css"/>
+
+		<!-- Custom stlylesheet -->
+		<%-- <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css"/> --%>
+		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/common.css"/>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- jQuery Plugins -->
+		<script src="${pageContext.request.contextPath }/resources/js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath }/resources/js/slick.min.js"></script>
+		<script src="${pageContext.request.contextPath }/resources/js/nouislider.min.js"></script>
+		<script src="${pageContext.request.contextPath }/resources/js/jquery.zoom.min.js"></script>
+		<script src="${pageContext.request.contextPath }/resources/js/main.js"></script>
+		
+</head>
 		<!-- HEADER -->
 		<header>
-		
-				<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common.css"/>
-				      <!-- Google font -->
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-      <!-- Bootstrap -->
-      <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css"/>
-
-      <!-- Slick -->
-      <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/slick.css"/>
-      <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/slick-theme.css"/>
-
-      <!-- nouislider -->
-      <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/nouislider.min.css"/>
-
-      <!-- Font Awesome Icon -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-      <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/font-awesome.min.css"/>
-
-      <!-- Custom stlylesheet -->
-      <%-- <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css"/> --%>
-      <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/common.css"/>
-
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-     
-     
-     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/js/slick.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/js/nouislider.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/js/jquery.zoom.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-     
 			<!-- TOP HEADER -->
 			<div id="top-header">
 				<div class="container">
@@ -61,8 +63,8 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="http://localhost:8180/dpr/" class="logo">
-									<img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="">
+								<a href="#" class="logo">
+									<img src="${pageContext.request.contextPath }/resources/img/logo.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -84,7 +86,7 @@
 							<div class="header-ctn">
 								<!-- Wishlist -->
 								<div>
-									<a href="#">
+									<a href="${pageContext.request.contextPath}/myPage/myPage.do">
 										<i class="fas fa-user"></i>
 										<span>My Page</span>
 										<!-- <div class="qty">2</div> -->
@@ -93,7 +95,7 @@
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
-								<div class="dropdown"> 
+								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Cart</span>
@@ -103,7 +105,7 @@
 										<div class="cart-list">
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="${pageContext.request.contextPath }resources/img/product01.png" alt="">
+													<img src="${pageContext.request.contextPath }/resources/img/product01.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -114,7 +116,7 @@
 
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="${pageContext.request.contextPath }resources/img/product02.png" alt="">
+													<img src="${pageContext.request.contextPath }/resources/img/product02.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -128,7 +130,7 @@
 											<h5>SUBTOTAL: $2940.00</h5>
 										</div>
 										<div class="cart-btns">
-											<a href="${pageContext.request.contextPath}/prod/cart.do">View Cart</a>
+											<a href="#">View Cart</a>
 											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
@@ -177,6 +179,5 @@
 			</div>
 			<!-- /container -->
 		</nav>
-		
-		
+
 		<!-- /NAVIGATION -->
