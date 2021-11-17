@@ -13,7 +13,9 @@
 	});
 
 	/////////////////////////////////////////
+
 /*
+
 	// Products Slick
 	$('.products-slick').each(function() {
 		var $this = $(this),
@@ -60,9 +62,8 @@
 			appendArrows: $nav ? $nav : false,
 		});
 	});
-*/
-	/////////////////////////////////////////
 
+*/
 
 	// Product Main img Slick
 	$('#product-main-img').slick({
@@ -94,6 +95,7 @@
       },
     ]
   });
+
 	// Product img zoom
 	var zoomMainProduct = document.getElementById('product-main-img');
 	if (zoomMainProduct) {
