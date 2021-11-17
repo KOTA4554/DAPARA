@@ -11,6 +11,7 @@
  	
 	<!-- #2 Java full package class access to alias -->
 
+
  	<typeAliases>
  		<typeAlias alias="Seller" type="com.kh.dpr.seller.model.vo.Seller"/>
  		<typeAlias alias="Order" type="com.kh.dpr.order.model.vo.Order"/>
@@ -23,6 +24,7 @@
  	<typeHandlers>
  		<package name="com.kh.dpr.common"/>
  	</typeHandlers>
+
 
  	
  </configuration>
