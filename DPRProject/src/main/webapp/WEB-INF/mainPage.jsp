@@ -1,10 +1,50 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>main page</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="resources/css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="resources/css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="resources/css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="resources/css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+		<link rel="stylesheet" href="resources/css/font-awesome.min.css"/>
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="resources/css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="resources/css/common.css"/>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
 	<body>
 		<c:import url="views/common/header.jsp"/>
+		
+
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
@@ -46,8 +86,8 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+												<h3 class="product-name"><a href="${pageContext.request.contextPath}/prod/detail.do">product name goes here</a></h3>
+												<h4 class="product-price">$990.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -386,15 +426,16 @@
 											</div>
 										</div>
 										<!-- /product -->
+
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">
 												<img src="resources/img/product01.png" alt="">
 											</div>
 											<div class="product-body">
-												<p class="product-category1">Category</p>
-												<h3 class="product-name1"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price1">$980.00 <del class="product-old-price">$990.00</del></h4>
+												<p class="product-category">Category</p>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
+												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -725,12 +766,14 @@
 		<c:import url="views/common/footer.jsp"/>
 		
 		<!-- jQuery Plugins -->
-		<script src="resources/js/jquery.min.js"></script>
-		<script src="resources/js/bootstrap.min.js"></script>
-		<script src="resources/js/slick.min.js"></script>
-		<script src="resources/js/nouislider.min.js"></script>
-		<script src="resources/js/jquery.zoom.min.js"></script>
-		<script src="resources/js/main.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/slick.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/nouislider.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/jquery.zoom.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 
 	</body>
 </html>
+
+
