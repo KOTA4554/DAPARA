@@ -64,5 +64,3 @@
 			<!-- /top footer -->
 		</footer>
 
-
-

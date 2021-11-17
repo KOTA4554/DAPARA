@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <head>
 
@@ -28,9 +30,10 @@
 
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-		<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"/>
 
 		<!-- Custom stlylesheet -->
+
 
 		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css"/> 
 		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/jeongho.css"/>
@@ -39,12 +42,14 @@
 		<script src="${pageContext.request.contextPath }/resources/js/slick.min.js"></script>
 
 
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
 
 		
 		<!-- jQuery Plugins -->
@@ -63,14 +68,21 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fas fa-key"></i> 로그인</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> 회원가입</a></li>
+					<c:if test="${empty seller}">
+						<li><a href="${pageContext.request.contextPath}/member/memberLogin.do"><i class="fas fa-key"></i> 로그인</a></li>
+						<li><a href="${pageContext.request.contextPath}/member/memberSignUp.do"><i class="fa fa-user-o"></i> 회원가입</a></li>
+					</c:if>
+		   			<c:if test="${!empty seller}">
+		   				<li><i class="fa fa-user-o"></i><a>(seller) ${seller.sellerId} 님 안녕하세요.</a></li>
+		   				<li><i class="fas fa-sign-out-alt"></i><a href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a></li>
+		   			</c:if>
 					</ul>
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
 
 			<!-- MAIN HEADER -->
+			<c:if test="${empty seller}">
 			<div id="header">
 				<!-- container -->
 				<div class="container">
@@ -80,7 +92,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="${pageContext.request.contextPath }/resources/img/logo.png" alt="">
+									<img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -176,6 +188,49 @@
 		<!-- /HEADER -->
 
 		<!-- NAVIGATION -->
+	    <nav id="navigation">
+	       <!-- container -->
+	       <div class="container">
+	          <!-- responsive-nav -->
+	          <div id="responsive-nav">
+	             <!-- NAV -->
+	             
+	             <div id="menu">
+	             
+	             <ul class="main-nav nav navbar-nav">
+	                <li class="active"><a href="#">BEST</a></li>
+	                <li><a href="${pageContext.request.contextPath}/product/clothes.do">의류</a>
+	                   <ul>
+	                      <li><a href="/product/list?c1=0&c2=1">탑</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=2">니트웨어</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=3">셔츠/자켓</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=4">셔츠</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=5">수트</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=6">팬츠</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=7">언더웨어</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=8">비치웨어</a></li>&nbsp;
+	                      <li><a href="/product/list?c1=0&c2=9">기능성의류</a></li>&nbsp;
+	                    </ul>
+	                </li>
+	                <li><a href="/product/shoes">슈즈</a></li>
+	                     
+	                <li><a href="${pageContext.request.contextPath}/product/bagpack.do">가방</a></li>
+	                <li><a href="${pageContext.request.contextPath}/product/accessories.do">액세서리</a></li>
+	                <li><a href="${pageContext.request.contextPath}/product/jewellery.do">쥬얼리</a></li>
+	                <li><a href="${pageContext.request.contextPath}/product/clothes.do">SALES</a></li>
+	             </ul>
+	             </div>
+	             </div>
+	               <!-- /NAV -->
+	            </div>
+	            <!-- /responsive-nav -->
+	         </div>
+	         <!-- /container -->
+	      </nav>
+	      <!-- /NAVIGATION -->
+		</c:if>
+		
+		<c:if test="${!empty seller}">
 		<nav id="navigation">
 			<!-- container -->
 			<div class="container">
@@ -187,6 +242,7 @@
 					<div id="menu">
 					
 					<ul class="main-nav nav navbar-nav">
+
 						<li class="active"><a href="#">BEST</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/clothes.do">의류</a>
 							<ul>
@@ -207,6 +263,7 @@
 						<li><a href="${pageContext.request.contextPath}/product/accessories.do">액세서리</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/jewellery.do">쥬얼리</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/clothes.do">SALES</a></li>
+
 					</ul>
 					</div>
 					</div>
@@ -217,6 +274,7 @@
 			</div>
 			<!-- /container -->
 		</nav>
+		</c:if>
 
 
 		<!-- /NAVIGATION -->
