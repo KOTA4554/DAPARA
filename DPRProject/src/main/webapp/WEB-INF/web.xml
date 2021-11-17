@@ -5,7 +5,9 @@
 
 	<welcome-file-list>
 
+
 		<welcome-file>/WEB-INF/mainPage.jsp</welcome-file>
+
 
 	</welcome-file-list>
 
