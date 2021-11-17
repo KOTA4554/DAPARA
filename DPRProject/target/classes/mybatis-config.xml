@@ -10,6 +10,7 @@
  	</settings>
  	
 	<!-- #2 Java full package class access to alias -->
+
  	<typeAliases>
  		<typeAlias alias="Order" type="com.kh.dpr.order.model.vo.Order"/>
  		<typeAlias alias="OrderDetail" type="com.kh.dpr.order.model.vo.OrderDetail"/>
@@ -21,5 +22,6 @@
  	<typeHandlers>
  		<package name="com.kh.dpr.common"/>
  	</typeHandlers>
+
  	
  </configuration>
